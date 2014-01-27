@@ -1,0 +1,33 @@
+<%- model_class = Listing -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:offer) %></th>
+      <th><%= model_class.human_attribute_name(:expires) %></th>
+      <th><%= model_class.human_attribute_name(:menu) %></th>
+      <th><%= model_class.human_attribute_name(:available) %></th>
+      <th><%= model_class.human_attribute_name(:user_name) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= link_to listing.id, listing_path(listing) %></td>
+        <td><%= listing.name %></td>
+        <td><%= listing.offer %></td>
+        <td><%= listing.expires %></td>
+        <td><%= listing.menu %></td>
+        <td><%= listing.available %></td>
+        <td><%= listing.user.try(:name) %></td>
+        <td><%=l listing.created_at %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
