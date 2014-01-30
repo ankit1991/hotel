@@ -1,6 +1,6 @@
 class Listing < ActiveRecord::Base
   # Validation
-  validates :name, :offer, :menu, :available, :expires, presence: true
+  validates :name, :available, :expires, presence: true
   validate :validate_expires
 
   # Association

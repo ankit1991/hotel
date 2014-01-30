@@ -31,13 +31,6 @@
     </div>
   </div>
 
-  <div class="control-group">
-    <%= f.label :admin, :class => 'control-label' %>
-    <div class="controls">
-    <%= f.select :admin, options_for_select([['True', 1], ['False', 0]]) %>
-    </div>
-  </div>
-
   <div class="well">
     <h5>Listing: </h5>
     <%= f.fields_for :listing do |builder| %>

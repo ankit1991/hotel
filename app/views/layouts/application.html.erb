@@ -55,13 +55,14 @@
             </ul>
             <ul class="nav pull-right">
               <% if session[:user_id] %>
-                <li><%= link_to "Logout", logout_path, method: :delete %></li>
                 <li class="brand">
                   <%= session[:name].capitalize %>
                 </li>
+                <li><%= link_to "Logout", logout_path, method: :delete %></li>
               <% else %>
                 <li><%= link_to "Login", login_path %></li>
               <% end %>
+              <li><%= link_to 'Contact Us',contact_us_path %></li>
             </ul>
           </div>
         </div>

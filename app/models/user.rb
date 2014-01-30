@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Validations
   validates :name, :user_name, presence: true
   validates :user_name, :uniqueness => { :case_sensitive => false, :allow_blank => true }
-  validates :password, length: { minimum: 5 }
+  validates :password, length: { minimum: 5 }, on: :create
 
   # Associations
   has_one :listing, :dependent => :destroy
