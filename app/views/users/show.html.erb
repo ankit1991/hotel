@@ -7,7 +7,7 @@
         <h3>Name : <span><%= (@user.name || 'User').capitalize %></span></h3>
       <% end %>
       <h3>User Name : <span><%= @user.user_name %></span></h3>
-      <%= link_to 'Agrement', "http://www.google.com", :target => '_blank', :class => 'btn' %>
+      <%= link_to 'Agrement', @user.agrement.url, :target => '_blank', :class => 'btn' %>
       <div class="row-fluid description">
         <div class="span12">
           <h3>Listing:</h5>
