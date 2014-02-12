@@ -4,6 +4,7 @@ Hotel::Application.routes.draw do
   controller :sessions do
     get 'login' => :new
     get 'contact_us' => :contact_us
+    get 'about' => :about
     post 'login' => :create
     delete 'logout' => :destroy
   end
